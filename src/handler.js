@@ -1,5 +1,5 @@
-const { nanoid } = require("nanoid");
-const notes = require("./notes");
+const { nanoid } = require('nanoid');
+const notes = require('./notes');
 
 const addNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload;
@@ -39,7 +39,6 @@ const addNoteHandler = (request, h) => {
   });
   response.code(500);
   return response;
-
 };
 
 const getAllNotesHandler = () => ({
@@ -100,7 +99,7 @@ const editNoteByIdHandler = (request, h) => {
   });
   response.code(404);
   return response;
-}
+};
 
 const deleteNoteByIdHandler = (request, h) => {
   const { id } = request.params;
@@ -123,12 +122,12 @@ const deleteNoteByIdHandler = (request, h) => {
   });
   response.code(404);
   return response;
-}
+};
 
 module.exports = {
   addNoteHandler,
-  getAllNotesHandler, 
-  getNoteByIdHandler, 
+  getAllNotesHandler,
+  getNoteByIdHandler,
   editNoteByIdHandler,
-  deleteNoteByIdHandler
+  deleteNoteByIdHandler,
 };
